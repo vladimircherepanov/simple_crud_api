@@ -1,0 +1,27 @@
+{
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": false,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "node": true,
+    "commonjs": false
+  },
+  "rules": {
+    "indent": [
+        "error",
+        "tab"
+    ],
+    "global-require": [
+        "error"
+    ],
+    "handle-callback-err": [
+        "error"
+    ]
+  }
+}
