@@ -79,7 +79,7 @@ const server = http.createServer(async (req, res) => {
 		const userId = req.url.split('/')[3];
 		if (!validate(userId)) {
 			res.writeHead(400, {'Content-Type': 'application/json'});
-			res.end(JSON.stringify({error: 'userId invalid'}));
+			res.end(JSON.stringify({error: 'invalid userId'}));
 		} else {
 			const user = controller.getUserById(userId);
 			if (user) {
