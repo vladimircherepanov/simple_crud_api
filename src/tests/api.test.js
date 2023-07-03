@@ -8,11 +8,7 @@ describe('CRUD API testing', () => {
         "age": 41,
         "hobbies": ["staff", "beer", "trips"]
     };
-    const userUpdatedData = {
-        username: "petr",
-        age: 49,
-        hobbies: ["vodka", "wine"]
-    };
+
 
     test('GET /api/users should return status 200', async () => {
 		const response = await request(server).get('/api/users');
@@ -37,6 +33,7 @@ describe('CRUD API testing', () => {
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject(userData)
         createdUserId = response.body.id;
+
     }, 10000);
 
     test('GET /api/users/:userId should return status 200', async () => {
@@ -48,7 +45,7 @@ describe('CRUD API testing', () => {
     test('PUT /api/users/:userId should return status 200', async () => {
         const response = await request(server).put(`/api/users/${createdUserId}`).send(userUpdatedData);
         expect(response.status).toBe(200);
-        //expect(response.body.age).toBe(userUpdatedData.age);
+        //expect(response.body).toMatchObject(userUpdatedData);
 
     }, 10000);
 
